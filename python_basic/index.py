@@ -327,6 +327,5 @@ print(newlist) #now there is no if statement thus it prints everythingon the fru
 newlist = [x for x in range(10)]
 print(newlist)
 
-x = 9
 newlist = [x for x in range(10) if x<5]
 print(newlist)
