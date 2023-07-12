@@ -674,3 +674,299 @@ print(set1)
 # Both union() and update() will exclude any duplicate items.
 
 #To Keep ONLY the Duplicates:
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+x.intersection_update(y)
+print(x)
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+z = x.intersection(y)
+print(z) #Returns a set that contains the items that exist in both set x, and set y
+
+# Keep All, But NOT the Duplicates
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+x.symmetric_difference_update(y)
+print(x)
+
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+x.symmetric_difference(y)
+print(x) #Returns a set that contains all items from both sets, except items that are present in both
+
+# NOTE: The values True and 1 are considered the same value in sets, and are treated as duplicates
+
+
+#Dictionaries = Dictionaries are used to store data values in key:value pairs.A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
+
+#example
+thisdict = {
+    "brand": "ford",
+    "model": "Mustang",
+    "year": 1964
+}
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["brand"])
+
+#duplicate values overwrite existing values
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+print(thisdict)
+
+#To print length of items 
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(len(thisdict))
+
+#The values in dictionary items can be of any data type
+thisdict = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(type(thisdict)) #<class 'dict'>
+
+#The dict() Constructor
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)
+
+#Accessing Items 
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["model"])
+
+#another way to access dict is get() method 
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict.get("year")
+print(x)
+
+# To see the key values in a dict we use keys()
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+z = thisdict.keys()
+print(z)
+
+#Add a new item to the original dictionary, and see that the keys list gets updated as well
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.keys()
+print(x)
+car["color"] = "black"
+print(x)
+
+# Using values() to get the values of the keys 
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.values()
+print(x)
+
+# To make a change in the original dictionary, and see that the values list gets updated as well
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.values()
+print(x)
+car["year"] = 2000
+print(x)
+
+# Check if the Keys Exists 
+thisdict = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+if "model" in thisdict:
+    print("Yes, 'model' is one of the keys in thisdict dictionary")
+
+# Change Values
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["year"] = 2023
+print(thisdict)
+
+# Update Dictionary
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"year": 1999})
+print(thisdict)
+
+# Adding Items
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["color"] = "red"
+print(thisdict)
+
+# Update Dictionary
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"color": "black"})
+print(thisdict)
+
+# Removing Items 
+# using pop()
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop("model")
+print(thisdict)
+
+# using popitem() and removing items randomly
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.popitem()
+print(thisdict)
+
+#using del()
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict["model"]
+print(thisdict)
+
+#clear() clears the dictionary
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.clear()
+# print(thisdict) throws an error as the dictionary is cleared
+
+# loop through dictionaries
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for x in thisdict:
+    print(x) 
+
+#print all values
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for x in thisdict:
+    print(thisdict[x])
+
+# to print values we also use values()
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for x in thisdict.values():
+  print(x)
+
+#to print all the keys we use 
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for x in thisdict.keys():
+  print(x)
+
+# items() to print both keys and values
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+for x , y in thisdict.items():
+  print(x, y)
+
+#Copy Dictionaries
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = thisdict.copy()
+print(mydict)
+
+#Make a copy of a dictionary with the dict() function
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = dict(thisdict)
+print(mydict)
+
+# Nested Dictionaries
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+}
+print(myfamily)
