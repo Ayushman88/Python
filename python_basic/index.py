@@ -1294,7 +1294,6 @@ tri_recursion(6)
 # Python Lambda
 # A lambda function is a small anonymous function.
 #A lambda function can take any number of arguments, but can only have one expression.
-
 # lambda arguments : expression
 
 x = lambda a : a + 10
@@ -1367,4 +1366,65 @@ cars = ["Ford", "Volvo", "BMW"]
 cars.remove("Ford")
 print(cars)
 
+
+
 # Python Classes and Objects
+class MyClass:
+    x = 5
+print(MyClass)
+
+p1 = MyClass()
+print(p1.x)
+
+# The __init__() Function
+# The examples above are classes and objects in their simplest form, and are not really useful in real life applications.
+# To understand the meaning of classes we have to understand the built-in __init__() function.
+# All classes have a function called __init__(), which is always executed when the class is being initiated.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+p1 = Person("John", 36)
+print(p1.name)
+print(p1.age)
+print(p1.name + " age is " + str(p1.age)) #tried to use str 
+
+
+# The __str__() Function
+# The __str__() function controls what should be returned when the class object is represented as a string.
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+p1 = Person("John", 36)
+print(p1)   #without using __str__()
+
+# with __str__()
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        def __str__(self):
+            return f"{self.name}({self.age})"
+p1 = Person("John",36)
+print(p1)
+
+
+# Object Methods
+# Objects can also contain methods. Methods in objects are functions that belong to the object.
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  def myfunc(self):
+    print("hello my name is " + self.name)
+p1 = Person("John", 36)
+p1.myfunc()
+
+
+# The self Parameter
+# The self parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class.
+
