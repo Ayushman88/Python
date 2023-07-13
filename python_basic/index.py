@@ -970,3 +970,401 @@ myfamily = {
   }
 }
 print(myfamily)
+
+
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+
+myfamily = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+
+print(myfamily['child2']['name'])
+
+
+# Python Conditions and If statements
+
+'''
+Python supports the usual logical conditions from mathematics:
+Equals: a == b
+Not Equals: a != b
+Less than: a < b
+Less than or equal to: a <= b
+Greater than: a > b
+Greater than or equal to: a >= b
+These conditions can be used in several ways, most commonly in "if statements" and loops.
+'''
+
+
+a = 33
+b = 200
+if b>a:
+  print("b is greater than a")
+
+# Indentation
+# Python relies on indentation (whitespace at the beginning of a line) to define scope in the code. Other programming languages often use curly-brackets for this purpose.
+# Example
+# If statement, without indentation (will raise an error):
+# a = 33
+# b = 200
+# if b > a:
+# print("b is greater than a") # you will get an error
+
+a = 33
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal") # elif is like a else if code
+
+a = 200
+b = 33
+if b > a:
+    print("b is greater than a")
+elif a == b:
+    print("a and b are equal")
+else: 
+    print("a is greater than b")
+
+a = 200
+b = 33
+if b > a:
+    print("b is greater than a")
+else:
+    print("a is greater than b")
+
+# statements can be also written in one line
+a = 200
+b = 33
+if a > b: print("a is greater than b")
+else: print("a is greater than b")
+
+# we can also write if else statements in same line
+a = 330
+b = 330
+print("A") if a > b else print ("=") if a == b else print("B")
+
+#  'and' also can be used. It is a logical operator and is used to combine conditional statements
+a = 200
+b = 33
+c = 500
+if a > b and c > a:
+    print("Both conditions are True")
+
+#  'Or' also can be used. It is a logical operator and is used to combine conditional statements
+a = 200
+b = 33
+c = 500
+if a > b or a > c:
+    print("At least one condition is True")
+
+#  'not' also can be used. It is a logical operator and is used to reverse conditional statements
+a = 33
+b = 200
+if not a > b:
+  print("a is NOT greater than b")
+
+# Nested If
+# You can have if statements inside if statements, this is called nested if statements.
+
+x = 41
+if x > 10:
+    print("Above 10, ")
+if x > 20:
+    print("and also above 20")
+else: 
+    print("but not above 20")
+
+# The pass Statement
+# if statements cannot be empty, but if you for some reason have an if statement with no content, put in the pass statement to avoid getting an error.
+a = 33
+b = 200
+if b > a:
+    pass
+
+
+# Python has two primitive loop commands:
+# while loops
+# for loops
+
+# The while Loop
+i = 1
+while i < 6:
+    print(i)
+    i += 1
+
+# The break Statement
+# With the break statement we can stop the loop even if the while condition is true
+i = 1
+while i < 6:
+    print(i)
+    if i == 3:
+        break
+    i += 1
+
+# The continue Statement
+i = 0
+while i < 6:
+    i += 1
+    if i == 3:
+        continue
+    print(i)
+
+# The else Statement
+i = 1
+while i < 6:
+    print(i)
+    i += 1
+else: 
+    print("i is no longer than 6")
+
+
+# Python For Loops
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+    print(x)
+
+# Looping Through a String
+fruits = ["apple", "banana", "cherry"]
+for x in "banana":
+    print(x)
+
+# The break Statement in python array looping
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+    print(x)
+    if x == "banana": 
+      break
+
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    break
+  print(x) #example of break statement where break comes before print
+
+# The continue Statement in python array looping
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+    if x == "banana":
+        continue
+    print(x) # output wont show banana 
+
+# The range() Function
+for x in range(6):
+    print(x)
+
+for x in range(2, 6):
+    print(x)
+
+for x in range(2, 30, 3):
+    print(x) # starts from 2 prints till 29 +ing 3 to 2
+
+# Else in For Loop
+for x in range(6):
+    print(x)
+else:
+    print("finally finished")
+
+for x in range(6):
+    if x == 3: break
+    print(x) 
+else: 
+    print("finally finished")
+
+# Nested Loops
+adj = ["red", "big", "tasty"]
+fruits = ["apple", "banana", "cherry"]
+for x in adj:
+    for y in fruits:
+        print(x, "-", y)
+
+# The pass Statement
+for x  in [0, 1, 2]:
+    pass
+
+
+# Python Functions
+# A function is a block of code which only runs when it is called. You can pass data, known as parameters, into a function. A function can return data as a result.
+
+# In Python a function is defined using the def keyword
+def my_function():
+    print("hello function")
+my_function()  # you have top call a function to print a function
+
+# Arguments
+# Information can be passed into functions as arguments.
+# Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.
+# The following example has a function with one argument (fname). When the function is called, we pass along a first name, which is used inside the function to print the full name
+
+def my_function(fname):
+    print(fname + " Refsnes")
+my_function("Emil")
+my_function("Tobias")
+my_function("Linus")
+
+
+# Parameters or Arguments?
+# The terms parameter and argument can be used for the same thing: information that are passed into a function
+
+# From a function's perspective:
+# A parameter is the variable listed inside the parentheses in the function definition.
+# An argument is the value that is sent to the function when it is called.
+
+# Number of Arguments
+def my_function(fname, lname):
+  print(fname + " " + lname)
+my_function("Ayushman","Mishra")
+
+# Arbitrary Arguments, *args
+def my_function(*kids):
+    print("The youngest child is " + kids[2])
+my_function("Ram", "Shyam", "Mayan")
+
+# Keyword Arguments
+def my_function(child3, child2, child1):
+  print("The eldest child is " + child1)
+my_function(child1 = "Ram", child2 = "Shyam", child3 = "Mayan")
+
+# Arbitrary Keyword Arguments, **kwargs
+# If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function definition
+
+def my_function(**kid):
+  print("His last name is " + kid["lname"])
+my_function(fname = "Ayushman", lname = "Mishra")
+
+
+# Default Parameter Value
+def my_function(country = "India"):
+    print("I am from " + country)
+my_function("Sweden")
+my_function("United States")
+my_function()
+my_function("Brazil")
+
+# Passing a List as an Argument
+# You can send any data types of argument to a function (string, number, list, dictionary etc.), and it will be treated as the same data type inside the function.
+
+def my_function(food):
+    for x in food:
+      print(x)
+fruits = ["apple", "banana", "cherry"]
+my_function(fruits)
+
+# Return Values
+def my_function(x):
+    return 5 * x
+print(my_function(3))
+print(my_function(5))
+print(my_function(9))
+
+# The pass Statement {used when fucntion cannot be left empty}
+def myfunction():
+  pass
+
+'''
+# Recursion
+Python also accepts function recursion, which means a defined function can call itself.
+Recursion is a common mathematical and programming concept. It means that a function calls itself. This has the benefit of meaning that you can loop through data to reach a result.
+The developer should be very careful with recursion as it can be quite easy to slip into writing a function which never terminates, or one that uses excess amounts of memory or processor power. However, when written correctly recursion can be a very efficient and mathematically-elegant approach to programming.
+'''
+
+def tri_recursion(k):
+  if(k > 0):
+    result = k + tri_recursion(k - 1)
+    print(result)
+  else:
+    result = 0
+  return result
+print("\n\nRecursion Example Results")
+tri_recursion(6)
+
+
+# Python Lambda
+# A lambda function is a small anonymous function.
+#A lambda function can take any number of arguments, but can only have one expression.
+
+# lambda arguments : expression
+
+x = lambda a : a + 10
+print(x(5))
+
+x = lambda a, b : a * b 
+print(x(5, 6))
+
+x = lambda a, b, c : a + b + c
+print(x(5, 6, 2))
+
+# Why Use Lambda Functions?
+# The power of lambda is better shown when you use them as an anonymous function inside another function.
+
+def myfunc(n):
+    return lambda a : a * n 
+mydoubler = myfunc(2)
+print(mydoubler(11))
+
+def myfunc(n):
+    return lambda a : a * n 
+mytripler = myfunc(3)
+print(mytripler(11))
+
+def myfunc(n):
+  return lambda a : a * n
+mydoubler = myfunc(2)
+mytripler = myfunc(3)
+print(mydoubler(11))
+print(mytripler(11))
+
+# What is an Array?
+# An array is a special variable, which can hold more than one value at a time.
+# If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:
+# car1 = "Ford"
+# car2 = "Volvo"
+# car3 = "BMW"
+# However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?
+# The solution is an array!
+# An array can hold many values under a single name, and you can access the values by referring to an index number.
+
+cars = ["Ford", "Volvo", "BMW"]
+x = cars[0]
+print(x)
+
+cars = ["Ford", "Volvo", "BMW"]
+cars[0] = "Audi"
+print(cars)
+
+cars = ["Ford", "Volvo", "BMW"]
+x = len(cars)
+print(x)
+
+# Looping Array Elements
+cars = ["Ford", "Volvo", "BMW"]
+for x in cars:
+  print(x)
+
+# Adding Array Elements
+cars = ["Ford", "Volvo", "BMW"]
+cars.append("Honda")
+print(cars)
+
+# Removing Array Elements
+cars = ["Ford", "Volvo", "BMW"]
+cars.pop(1)
+print(cars)
+
+cars = ["Ford", "Volvo", "BMW"]
+cars.remove("Ford")
+print(cars)
+
+# Python Classes and Objects
